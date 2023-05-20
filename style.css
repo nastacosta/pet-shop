@@ -9,7 +9,7 @@
     background-color: rgb(38, 36, 36);
     height: 2.5rem;
     display: grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 80% 20%;
 }
 
 .heading p {
@@ -33,7 +33,7 @@
     border: transparent;
     width: fit-content;
     height: 100%;
-    margin-right: 1rem;
+    margin-right: 1rem; 
 }
 
 .heading .selectors option {
@@ -62,7 +62,7 @@
     width: fit-content;
     position: absolute;
     right: 4rem;
-
+    display: block;
 }
 
 .menu section button  {
@@ -75,6 +75,10 @@
     outline: transparent;
     border: transparent;
     cursor: pointer;
+}
+
+.hamburguer {
+    display: none;
 }
 
 .main {
@@ -92,7 +96,8 @@
 .main div {
     position: absolute;
     top: 38%;
-    right: 1.5rem;
+    right: 1.2rem;
+    margin-left: 1.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,9 +105,9 @@
 
 .main div h2 {
     font-weight: 400;
-    font-size: 3.4rem;
+    font-size: clamp(1.5rem, 6vw, 3.5rem); 
     background-color: rgb(254, 251, 246);
-    color: rgb(44, 42, 42);
+    color: rgb(50, 30, 24);
     border-radius: 0.7rem;
     padding: 1.2rem;
 }
@@ -110,8 +115,8 @@
 .main div p {
     color: rgb(29, 28, 28);
     margin: 1rem 0 1rem 0;
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: clamp(1.3rem, 3.5vw, 2rem); 
+    font-weight: 500;
     width: fit-content;
 }
 
@@ -119,7 +124,7 @@
     font-weight: 400;
     padding: 1.7rem 2.2rem 1.7rem 2.2rem;
     border-radius: 0.5rem;
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 3.5vw, 2rem); 
     background-color: #f0a83e;
     outline: transparent;
     border: transparent;
@@ -143,6 +148,8 @@
 .productos-title h2 {
     color: rgb(55, 32, 23);
     font-size: 4.7rem;
+    text-align: center;
+    margin: 0 1.5rem 0 1.5rem;
 }
 
 .productos-title p {
@@ -154,3 +161,46 @@
 .relleno {
     height: 40rem;
 }
+
+@media (max-width: 1150px) {
+
+    .heading {
+        display: none;
+    }
+
+    .menu {
+        grid-template-columns: 100% 0;
+    }
+
+    .main div {
+        top: 30%;
+        align-items:end;
+    }
+
+    .main div button {
+        margin-right: 1rem;
+    }
+
+    .menu section {
+        display: none;
+    }
+
+    .hamburguer {
+        position: absolute;
+        display: block;
+        width: 6.5rem;
+        height: 6.5rem;
+        right: 3rem;
+        outline: transparent;
+        border: transparent;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .hamburguer img {
+        -webkit-user-drag: none;
+        position: relative;
+        width: 100%;
+        filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(44deg) brightness(108%) contrast(100%);
+    }
+  }
